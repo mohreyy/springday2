@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	 <bean id="mob" class="com.cg.springdemotwo.service.Mobile">
+<!-- 	 <constructor-arg index="0" value="1001"></constructor-arg> -->
+<!-- 	 <constructor-arg index="1" value="Coolpad"></constructor-arg> -->
+<!-- 	  <constructor-arg index="2" value="50000"></constructor-arg> -->
+	 
+	 
+	 <property name="mobileId" value="100"></property>
+	 <property name="mobileName" value="Coolpad"></property>
+	 <property name="price" value="5000"></property>
+<!-- 	  <property name="invent" ref="inv"></property> -->
+<property name="invent">
+<list>
+<ref bean="one"></ref>
+<ref bean="two"></ref>
+<ref bean="three"></ref>
+</list>
+
+</property>
+
+	 </bean>
+		 
+		 
+		 <bean id="one" class="com.cg.springdemotwo.service.Inventory">
+		 <property name="mobileCount" value="10"></property>
+		 <property name="mobileCompany" value="Apple"></property>
+		 </bean>
+		  <bean id="two" class="com.cg.springdemotwo.service.Inventory">
+		 <property name="mobileCount" value="20"></property>
+		 <property name="mobileCompany" value="apple"></property>
+		 </bean>
+		  <bean id="three" class="com.cg.springdemotwo.service.Inventory">
+		 <property name="mobileCount" value="30"></property>
+		 <property name="mobileCompany" value="ple"></property>
+		 </bean>
+	
+	 
+</beans>
